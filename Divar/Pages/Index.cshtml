@@ -3,8 +3,30 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<style>
+    .li{
+        border:2px solid black;
+        list-style-type: none;
+        margin:2px;
+        direction:rtl;
+        background-color:lightgoldenrodyellow
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    }
+
+</style>
+
+<ul>
+    @foreach(var ad in Model.adment)
+    {
+        <li class="li">
+
+            <h4>Name : @ad.Name</h4>
+            @if (ad.Discription != null)
+            {
+                <h4>discription : @ad.Discription</h4>
+  }
+
+        </li>
+    }
+</ul>
+

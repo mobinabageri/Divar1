@@ -1,8 +1,35 @@
 ﻿@page
 @model PrivacyModel
 @{
-    ViewData["Title"] = "Privacy Policy";
+   
 }
-<h1>@ViewData["Title"]</h1>
+<h1>Add Item</h1>
+<form  method="post">
+    <input type="text" name="title" value="" placeholder="title for advertisement" class="col-12 w-50 m-3" />
+    <input type="text" name="body" value="" placeholder="discription for advertisement" class="col-12 w-50 m-3"/>
+    <br />
+   <span>دسته بندی:</span>
+    <select class="w-25 p-1 m-1 bg-info" name="category">
+        @foreach (var item in Model.categories)
+        {
+            <option value="@item.Id">@item.Title</option>
 
-<p>Use this page to detail your site's privacy policy.</p>
+        }
+
+
+    </select>
+    <br />
+    <span>شهر:</span>
+    <select class="w-25 p-1 m-1 bg-info mx-5" name="city">
+        @foreach (var item in Model.Cities)
+        {
+
+            <option value="@item.Id">@item.CityName</option>
+
+        }
+    </select>
+<br />
+
+<input type="submit" name="sub" value="add" class="btn-primary w-50 m-3" />
+
+</form>
