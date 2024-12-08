@@ -5,14 +5,26 @@
 }
 <h1>Search</h1>
 <div class="">
-    <form  method="post" class="justify-content-center">
+    <form method="post" class="justify-content-center">
         <input type="text" name="Search" value="" placeholder="Search..." id="search" />
         <input type="submit" name="sub" value="search" class="btn-outline-primary" />
     </form>
 </div>
-<ul id="uls">
+<ul>
+    @if (Model.res != null)
+    {
+        @foreach (var item in Model.res)
+        {
 
-  
+            <li>
+                <h1>@item.Name</h1>
+                <p>@item.Discription</p>
+            </li>
+
+        }
+
+
+    }
 
 </ul>
 
